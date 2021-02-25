@@ -5,7 +5,7 @@
 #Description: scrape stock price of FOCUSP and RHB market from klsescreener and write the data into an excel file
 
 import webbrowser,requests,bs4,openpyxl
-from datetime import date
+from datetime import datetime
 print('Searching...')
 headers = headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
@@ -28,8 +28,10 @@ def getPrice(quote):
 print("Price of focusp is",getPrice(fcsp))
 print("Price of rhb is",getPrice(rhb))
 
-today = date.today()
-ftoday = today.strftime('%d/%m/%Y')
+#get date in format DD/MM/YYYY Hours:Minutes:Seconds 
+today = datetime.now()
+ftoday = today.strftime('%d/%m/%Y %H:%M:%S')
+
 try:
     wb = openpyxl.load_workbook('stockprice.xlsx')
     sheet= wb['Sheet']
