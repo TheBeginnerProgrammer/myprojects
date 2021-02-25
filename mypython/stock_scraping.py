@@ -47,7 +47,7 @@ except:
     sheet = wb.active
     sheet['A1'] = 'FOCUSP'
     sheet['D1'] = 'RHB'
-    print('file created')
+    print('file created at',Path.cwd())
     print("Quit this program and run it again please")
     wb.save('stockprice.xlsx')
 
