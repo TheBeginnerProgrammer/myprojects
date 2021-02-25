@@ -54,11 +54,12 @@ def playerTurns():
 
 def cpuTurns():
     cpuInput = random.randint(1,9)
-    print("CPU's position is: ",cpuInput)
+    
 
     if (cpuInput not in playerChoice) and (cpuInput not in cpuChoice):
         cpuChoice.add(cpuInput)
-
+        print("CPU's position is: ",cpuInput)
+        
         if cpuInput == 1:
             gameBoard[0][0] = "O"
         if cpuInput == 2:
