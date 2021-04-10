@@ -101,12 +101,13 @@ def interface():
             print("Not balance..continuing")
             recordnumber +=1
             interface()
-
+            
+date = input("What is the date? : ")
 interface()
 #print(memory)
 
 blank = ""
-today = date.today().strftime("%d/%m/%Y")
+#today = date.today().strftime("%d/%m/%Y")
 def generateEntry(dictionary):
     blank = ""
     nothing = ""
@@ -114,7 +115,7 @@ def generateEntry(dictionary):
     print('Date'.ljust(12,'-')+"Entries".ljust(30,'-')+"Debit".center(10,'-')+"Credit".center(10,'-'))
     for i in range(1,debitRecord+1):
         if i == 1:
-            print("{:<12}{:<30}{:^10}{:^10}".format(today,memory["Debit"][i][0],memory["Debit"][i][1],nothing))
+            print("{:<12}{:<30}{:^10}{:^10}".format(date,memory["Debit"][i][0],memory["Debit"][i][1],nothing))
         else:
             print("{:<12}{:<30}{:^10}{:^10}".format(blank,memory["Debit"][i][0],memory["Debit"][i][1],nothing))
     for j in range(1,creditRecord+1):
